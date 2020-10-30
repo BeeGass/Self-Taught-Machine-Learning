@@ -35,8 +35,8 @@ def main(argv):
         print("running DistTwo")
         NormalDistTwo()
     elif int(argv) == 2:
-        print("running DistTwo")
-        NormalDistTwo()
+        print("running DistThree")
+        NormalDistThree()
 
 
 if __name__ == "__main__":
