@@ -49,6 +49,9 @@ Week 10: Large Scale Machine Learning
 
 Week 11: Application Example: Photo OCR
 
+* This may help you 
+  * https://github.com/dibgerge/ml-coursera-python-assignments
+
 
 ## Supplemental Things I Plan To Use:
 StatQuest YouTube Channel:
