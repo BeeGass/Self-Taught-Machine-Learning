@@ -72,6 +72,7 @@ Week 11: Application Example: Photo OCR
 * [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 * [Hands-On Machine Learning with Scikit-Learn and TensorFlow](http://index-of.es/Varios-2/Hands%20on%20Machine%20Learning%20with%20Scikit%20Learn%20and%20Tensorflow.pdf)
 * [Hands On Machine Learning github](https://github.com/ageron/handson-ml)
+* [Helpful Stuff](http://tullo.ch/)
 
 
 
@@ -79,6 +80,8 @@ Week 11: Application Example: Photo OCR
 Homework questions come from the end of each applicable chapter in "An Introduction To Statistical Learning With Applications In R" Or "Pattern Recognition and Machine Learning". These are ideally done in python and not in R, however...
 
 For answers for "An Introduction To Statistical Learning With Applications In R" refer to: 
+* For Answers Specific In Python:
+  * https://botlnec.github.io/islp/
 * https://rpubs.com/ppaquay
 * http://yahwes.github.io/ISLR/
 * https://github.com/yahwes/ISLR
@@ -87,14 +90,17 @@ For answers for "An Introduction To Statistical Learning With Applications In R"
 * https://github.com/asadoughi/stat-learning
 * https://www.kaggle.com/lmorgan95/notebooks
 
-For Answers Specific In Python:
-* https://botlnec.github.io/islp/
-
 For answers for "Pattern Recognition and Machine Learning" refer to: 
 * [Chapter Overviews and Solutions](https://tommyodland.com/files/edu/bishop_solutions.pdf)
 * [github of the solution stuff](https://github.com/zhengqigao/PRML-Solution-Manual)
 * [Official Solution Manual](https://github.com/zhengqigao/PRML-Solution-Manual/blob/master/Solution%20Manual%20For%20PRML.pdf)
 * [Another Official Looking Solution Set](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/05/prml-web-sol-2009-09-08.pdf)
+
+For answers for "The Elements of Statistical Learning Data Mining, Inference, and Prediction" refer to: 
+* [A Solution Manual and Notes for: The Elements of Statistical Learning by Jerome Friedman, Trevor Hastie, and Robert Tibshirani](https://waxworksmath.com/Authors/G_M/Hastie/WriteUp/Weatherwax_Epstein_Hastie_Solution_Manual.pdf)
+* [A GUIDE AND SOLUTION MANUAL TO THE ELEMENTS OF STATISTICAL LEARNING by JAMES CHUANBING MA](https://getd.libs.uga.edu/pdfs/ma_james_c_201412_ms.pdf)
+* [Solutions to Select Problems of The Elements of Statistical Learning by talwarabhimanyu](https://github.com/talwarabhimanyu/my-solutions-The-Elements-of-Statistical-Learning)
+* [Elements of Statistical Learning (Solutions) by Andrew Tulloch](http://tullo.ch/static/ESL-Solutions.pdf)
 
 ## Math Resources To Help
 * Probability And Statistics
