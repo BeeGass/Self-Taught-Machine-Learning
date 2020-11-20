@@ -91,7 +91,10 @@ For Answers Specific In Python:
 * https://botlnec.github.io/islp/
 
 For answers for "Pattern Recognition and Machine Learning" refer to: 
-* To Be Completed
+* [Chapter Overviews and Solutions](https://tommyodland.com/files/edu/bishop_solutions.pdf)
+* [github of the solution stuff](https://github.com/zhengqigao/PRML-Solution-Manual)
+* [Official Solution Manual](https://github.com/zhengqigao/PRML-Solution-Manual/blob/master/Solution%20Manual%20For%20PRML.pdf)
+* [Another Official Looking Solution Set](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/05/prml-web-sol-2009-09-08.pdf)
 
 ## Math Resources To Help
 * Probability And Statistics
