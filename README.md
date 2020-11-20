@@ -73,10 +73,6 @@ Another Professor At My School's Curriculum:
 
 * [https://users.wpi.edu/\~jrwhitehill/CS453X\_2018\_Lectures/](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/)
 
-Khan Academy's Probability And Statistics course (For any catch up I might need):
-
-* [https://www.khanacademy.org/math/statistics-probability](https://www.khanacademy.org/math/statistics-probability)
-
 The Book "An Introduction To Statistical Learning With Applications In R" (For going more in depth):
 
 * [https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf](https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf)
