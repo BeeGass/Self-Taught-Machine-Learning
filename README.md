@@ -26,11 +26,11 @@ You can choose which curriculum you want. If you choose Curriculum 1 you should 
 21. [Deep Learning / Stochastic Gradient Descent](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote20.pdf)
 
 * Some Things That Might Help:
- * http://www.cs.cornell.edu/courses/cs4780/2018fa/page18/
- * http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/
- * [YouTube Version Of The Lecture](https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS)
- * http://noiselab.ucsd.edu/ECE228/Murphy_Machine_Learning.pdf
- * https://web.stanford.edu/~hastie/Papers/ESLII.pdf
+  * http://www.cs.cornell.edu/courses/cs4780/2018fa/page18/
+  * http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/
+  * [YouTube Version Of The Lecture](https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS)
+  * http://noiselab.ucsd.edu/ECE228/Murphy_Machine_Learning.pdf
+  * https://web.stanford.edu/~hastie/Papers/ESLII.pdf
  
 
 ## CURRICULUM 2: [Andrew Ng's Machine Learning Coursera Course](https://www.coursera.org/learn/machine-learning)
@@ -99,15 +99,15 @@ For Answers Specific In Python:
 
 ## Math Resources To Help
 * Probability And Statistics
- * [Khan Academy Probability and Statistics](https://www.khanacademy.org/math/statistics-probability)
- * [Statistics](https://www.youtube.com/playlist?list=PL5102DFDC6790F3D0)
- * [Probabilistic Systems Analysis and Applied Probability](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/)
+  * [Khan Academy Probability and Statistics](https://www.khanacademy.org/math/statistics-probability)
+  * [Statistics](https://www.youtube.com/playlist?list=PL5102DFDC6790F3D0)
+  * [Probabilistic Systems Analysis and Applied Probability](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/)
 * Precalculus and Calculus 1-3
- * [Precalculus](https://www.youtube.com/playlist?list=PLDesaqWTN6ESsmwELdrzhcGiRhk5DjwLP)
- * [Calculus 1](https://www.youtube.com/playlist?list=PLF797E961509B4EB5)
- * [Calculus 2](https://www.youtube.com/playlist?list=PLDesaqWTN6EQ2J4vgsN1HyBeRADEh4Cw-)
- * [Calculus 3](https://www.youtube.com/playlist?list=PLDesaqWTN6ESk16YRmzuJ8f6-rnuy0Ry7)
- * [Calculus 1-3](https://www.youtube.com/user/amarchese22/playlists?disable_polymer=1)
+  * [Precalculus](https://www.youtube.com/playlist?list=PLDesaqWTN6ESsmwELdrzhcGiRhk5DjwLP)
+  * [Calculus 1](https://www.youtube.com/playlist?list=PLF797E961509B4EB5)
+  * [Calculus 2](https://www.youtube.com/playlist?list=PLDesaqWTN6EQ2J4vgsN1HyBeRADEh4Cw-)
+  * [Calculus 3](https://www.youtube.com/playlist?list=PLDesaqWTN6ESk16YRmzuJ8f6-rnuy0Ry7)
+  * [Calculus 1-3](https://www.youtube.com/user/amarchese22/playlists?disable_polymer=1)
 * Linear Algebra
- * [Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/)
- * [Matrix Methods in Data Analysis, Signal Processing, and Machine Learning](https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/)
+  * [Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/)
+  * [Matrix Methods in Data Analysis, Signal Processing, and Machine Learning](https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/)
