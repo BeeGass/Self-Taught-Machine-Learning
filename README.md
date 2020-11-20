@@ -102,6 +102,10 @@ For answers for "The Elements of Statistical Learning Data Mining, Inference, an
 * [Solutions to Select Problems of The Elements of Statistical Learning by talwarabhimanyu](https://github.com/talwarabhimanyu/my-solutions-The-Elements-of-Statistical-Learning)
 * [Elements of Statistical Learning (Solutions) by Andrew Tulloch](http://tullo.ch/static/ESL-Solutions.pdf)
 
+For answers for "Machine Learning: A Probabilistic Perspective" refer to:
+* [Solutions by ArthurZC23](https://github.com/ArthurZC23/Machine-Learning-A-Probabilistic-Perspective-Solutions)
+* [Solutions by MLAPP-solution-CN](https://github.com/MLAPP-solution-CN/Solutions-to-Machine-Learning-A-Probabilistic-Perspective-/blob/master/sol_1_to_21.pdf)
+
 ## Math Resources To Help
 * Probability And Statistics
   * [Khan Academy Probability and Statistics](https://www.khanacademy.org/math/statistics-probability)
