@@ -1,5 +1,5 @@
 [![BeeGassy's github stats](https://github-readme-stats.vercel.app/api?username=beegassy)](https://github.com/beegassy/github-readme-stats)
-# Self_Taught_Machine_Learning
+# Self Taught Machine Learning
 [From Knowing Nothing To Being An AI Expert: Roadmap](https://i.am.ai/roadmap)
 
 ## Curriculum Overview
