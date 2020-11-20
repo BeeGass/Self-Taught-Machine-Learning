@@ -69,6 +69,10 @@ Week 11: Application Example: Photo OCR
 * [Professor Whitehill's Machine Learning Curriculum](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/)
 * [An Introduction To Statistical Learning With Applications In R](https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf)
 * [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
+* [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
+* [Hands-On Machine Learning with Scikit-Learn and TensorFlow](http://index-of.es/Varios-2/Hands%20on%20Machine%20Learning%20with%20Scikit%20Learn%20and%20Tensorflow.pdf)
+* [Hands On Machine Learning github](https://github.com/ageron/handson-ml)
+
 
 
 ## Homework
