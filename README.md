@@ -76,9 +76,9 @@ Week 11: Application Example: Photo OCR
 
 
 ## Homework
-Homework questions come from the end of each applicable chapter in "An Introduction To Statistical Learning With Applications In R". These are ideally done in python and not in R, however...
+Homework questions come from the end of each applicable chapter in "An Introduction To Statistical Learning With Applications In R" Or "Pattern Recognition and Machine Learning". These are ideally done in python and not in R, however...
 
-For answers refer to: 
+For answers for "An Introduction To Statistical Learning With Applications In R" refer to: 
 * https://rpubs.com/ppaquay
 * http://yahwes.github.io/ISLR/
 * https://github.com/yahwes/ISLR
@@ -89,6 +89,9 @@ For answers refer to:
 
 For Answers Specific In Python:
 * https://botlnec.github.io/islp/
+
+For answers for "Pattern Recognition and Machine Learning" refer to: 
+* To Be Completed
 
 ## Math Resources To Help
 * Probability And Statistics
