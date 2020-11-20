@@ -61,6 +61,34 @@ Week 11: Application Example: Photo OCR
 
 * This may help you 
   * [Answers To Everything In Python](https://github.com/dibgerge/ml-coursera-python-assignments)
+  
+## CURRICULUM 3: [Yet Another Machine Learning Course](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/)
+Lecture 1 (introduction to ML, accuracy & loss functions): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture1.pdf)
+Lecture 2 (greedy step-wise classification, training versus testing): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture2.pdf)
+Lecture 3 (linear regression): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture3.pdf)
+Lecture 4 (more on linear regression): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture4.pdf)
+Lecture 5 (gradient descent): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture5.pdf)
+Lecture 6 (polynomial regression, overfitting): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture6.pdf)
+Lecture 7 (regularization, logistic regression): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture7.pdf)
+Lecture 8 (softmax regression, cross-entropy): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture8.pdf)
+Lecture 9 (stochastic gradient descent, convexity): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture9.pdf)
+Lecture 10 (positive semi-definiteness, constrained optimization): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture10.pdf)
+Lecture 11 (support vector machines): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture11.pdf)
+Lecture 12 (soft versus hard margin SVM, linear separability): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture12.pdf)
+Lecture 13 (kernelization): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture13.pdf)
+Lecture 14 (more on kernelization): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture14.pdf)
+Lecture 15 (Gaussian RBF kernel, nearest neighbors): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture15.pdf)
+Lecture 16 (principal component analysis): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture16.pdf)
+Lecture 17 (k-means): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture17.pdf)
+Lecture 18 (introduction to neural networks): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture18.pdf)
+Lecture 19 (more on neural networks, XOR problem): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture19.pdf)
+Lecture 20 (gradient descent for neural networks, Jacobian matrices): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture20.pdf)
+Lecture 21 (chain rule and backpropagation): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture21.pdf)
+Lecture 22 (L1 and L2 regularization, dropout): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture22.pdf)
+Lecture 23 (unsupervised pre-training, auto-encoders): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture23.pdf)
+Lecture 24 (convolution, pooling): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture24.pdf)
+Lecture 25 (convolutional neural networks, recurrent neural networks): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture25.pdf)
+Lecture 26 (practical suggestions): [PDF](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/CS453X_2018_Lecture26.pdf)
 
 
 ## Supplemental Things I Plan To Use:
