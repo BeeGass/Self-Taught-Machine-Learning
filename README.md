@@ -1,5 +1,5 @@
 [![BeeGassy's github stats](https://github-readme-stats.vercel.app/api?username=beegassy)](https://github.com/beegassy/github-readme-stats)
-# CS-4342-Machine-Learning
+# Self_Taught_Machine_Learning
 You can choose which curriculum you want. If you choose Curriculum 1 you should refer to all the other material in this README. If you choose Curriculum 2 stick to Andrew Ng's curriculum. 
 
 ## CURRICULUM 1: [Cornell's](https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS)
