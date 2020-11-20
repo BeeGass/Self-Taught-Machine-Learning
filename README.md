@@ -68,6 +68,7 @@ Week 11: Application Example: Photo OCR
 * [Intuitive Machine Learning YouTube Channel](https://www.youtube.com/c/IntuitiveMachineLearning/videos)
 * [Professor Whitehill's Machine Learning Curriculum](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/)
 * [An Introduction To Statistical Learning With Applications In R](https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf)
+* [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
 
 
 ## Homework
