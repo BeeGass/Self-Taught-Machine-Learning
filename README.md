@@ -2,7 +2,6 @@
 # CS-4342-Machine-Learning
 
 ## CURRICULUM 1: [Cornell's](https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS)
-
 1. [Machine Learning Setup](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote01_MLsetup.html)
 2. [k-Nearest Neighbors / Curse of Dimensionality](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote02_kNN.html)
 3. [Perceptron](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote03.html)
@@ -25,10 +24,8 @@
 20. [Neural Networks](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote20.html)
 21. [Deep Learning / Stochastic Gradient Descent](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote20.pdf)
 
-\------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## CURRICULUM 2: [Andrew Ng's Machine Learning Coursera Course](https://www.coursera.org/learn/machine-learning)
-
 Week 1: Introduction, Linear Regression With One Variable, Linear Algebra Review
 
 Week 2: Linear Regression With Multiple Variables, Octave/Matlab Tutorial
@@ -51,9 +48,8 @@ Week 10: Large Scale Machine Learning
 
 Week 11: Application Example: Photo OCR
 
-\------------------------------------------------------------------------------------------------------------------------------------------------
-## Supplemental Things I Plan To Use:
 
+## Supplemental Things I Plan To Use:
 StatQuest YouTube Channel:
 
 * [https://www.youtube.com/c/joshstarmer/videos](https://www.youtube.com/c/joshstarmer/videos)
@@ -74,10 +70,8 @@ The Book "An Introduction To Statistical Learning With Applications In R" (For g
 
 * [https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf](https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf)
 
-\------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Homework
-
 Homework questions come from the end of each applicable chapter in "An Introduction To Statistical Learning With Applications In R". These are ideally done in python and not in R, however. 
 
 For answers refer to: 
