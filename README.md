@@ -26,11 +26,11 @@ You can choose which curriculum you want. If you choose Curriculum 1 you should 
 21. [Deep Learning / Stochastic Gradient Descent](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote20.pdf)
 
 * Some Things That Might Help:
-  * http://www.cs.cornell.edu/courses/cs4780/2018fa/page18/
-  * http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/
+  * [Overview and Associated Notes For Each Chapter](http://www.cs.cornell.edu/courses/cs4780/2018fa/page18/)
+  * [Each Section In Order](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/)
   * [YouTube Version Of The Lecture](https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS)
-  * http://noiselab.ucsd.edu/ECE228/Murphy_Machine_Learning.pdf
-  * https://web.stanford.edu/~hastie/Papers/ESLII.pdf
+  * [Machine Learning: A Probabilistic Perspective](http://noiselab.ucsd.edu/ECE228/Murphy_Machine_Learning.pdf)
+  * [The Elements of Statistical Learning Data Mining, Inference, and Prediction](https://web.stanford.edu/~hastie/Papers/ESLII.pdf)
  
 
 ## CURRICULUM 2: [Andrew Ng's Machine Learning Coursera Course](https://www.coursera.org/learn/machine-learning)
@@ -57,25 +57,14 @@ Week 10: Large Scale Machine Learning
 Week 11: Application Example: Photo OCR
 
 * This may help you 
-  * https://github.com/dibgerge/ml-coursera-python-assignments
+  * [Answers To Everything In Python](https://github.com/dibgerge/ml-coursera-python-assignments)
 
 
 ## Supplemental Things I Plan To Use:
-StatQuest YouTube Channel:
-
-* [https://www.youtube.com/c/joshstarmer/videos](https://www.youtube.com/c/joshstarmer/videos)
-
-Intuitive Machine Learning YouTube Channel:
-
-* [https://www.youtube.com/c/IntuitiveMachineLearning/videos](https://www.youtube.com/c/IntuitiveMachineLearning/videos)
-
-Another Professor At My School's Curriculum:
-
-* [https://users.wpi.edu/\~jrwhitehill/CS453X\_2018\_Lectures/](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/)
-
-The Book "An Introduction To Statistical Learning With Applications In R" (For going more in depth):
-
-* [https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf](https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf)
+* [StatQuest YouTube Channel](https://www.youtube.com/c/joshstarmer/videos)
+* [Intuitive Machine Learning YouTube Channel](https://www.youtube.com/c/IntuitiveMachineLearning/videos)
+* [Professor Whitehill's Machine Learning Curriculum](https://users.wpi.edu/~jrwhitehill/CS453X_2018_Lectures/)
+* [An Introduction To Statistical Learning With Applications In R](https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf)
 
 
 ## Homework
