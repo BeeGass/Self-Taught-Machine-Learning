@@ -10,7 +10,7 @@ You can choose which curriculum you want. If you choose Curriculum 1 you should 
 2. [k-Nearest Neighbors / Curse of Dimensionality](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote02_kNN.html)
    * [Great explanation of nearest neighbor](https://alliance.seas.upenn.edu/~cis520/dynamic/2016/wiki/index.php?n=Lectures.LocalLearning)
    * [Video Of KNN](https://www.youtube.com/watch?v=gdS0V35GqgQ)
-   * [video explanation of K-nearest neighbor classification](http://videolectures.net/aaai07_bosch_knnc/)
+   * [Video explanation of K-nearest neighbor classification](http://videolectures.net/aaai07_bosch_knnc/)
 3. [Perceptron](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote03.html)
 4. [Estimating Probabilities from data](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote04.html)
 5. [Bayes Classifier and Naive Bayes](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote05.html)
