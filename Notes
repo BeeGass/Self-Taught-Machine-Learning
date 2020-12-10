@@ -1,0 +1,151 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\title{Cornell Machine Learning Notes}
+\author{Bryan Gass}
+\date{November 24 2020}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Supervised Learning} 
+    high level overview of supervised machine learning: attempts to make predictions from data 
+    
+\subsection{Setup}
+    We are given a dataset $\textbf{D}$ within data set we have data points and their labels, where x is an input instance/ feature vector (or just input) and y is the label associated with that input. There are $\textbf{n}$ data points within a dataset. 
+    
+    \begin{equation}
+        D = {(x_1, y_1), ..., (x_n, y_n)}
+    \end{equation}
+    
+    \begin{enumerate}
+        \item Example 1: 
+            Given a classifier that determines if something is spam or not we could view x as the email and y as a label that is either "spam" or "not spam"
+            
+        \item Example 2:
+            Given a classifier that determines if the stock market is rising or falling we can view the x as the stock and the y as the label that is either "up" or "down"
+    \end{enumerate}
+    
+    \begin{itemize}
+        \item 
+            $\textbf{\textit{R}}^{d}$ is the d-dimensional feature space
+            
+        \item
+            $x_i$ is the input vector of the $i^{th}$ sample
+        
+        \item   
+            $y_i$ is the label of the $i^{th}$ sample
+            
+        \item
+            \textit{C} is the label space \\
+    \end{itemize} 
+    
+    The arbitrary data point $x_{i}$ and the label $y_{i}$ is assumed to be under the normal distribution P. It should be noted we do not have access to this normal distribution, P, ever. It is a hypothetical normal distribution that contains the theoretical total amount of data of the dataset. Where our dataset $\textbf{D}$ is within P.
+    \begin{equation}
+        (x_{i}, y_{i}) \sim P
+    \end{equation} \\
+    
+    \textbf{The Idea of Supervised Learning:} to take our data set that contains the data points, $x_{i}$, and our labels ,$y_{i}$, to "learn" a function that can goes from $x_{i}$ to $y_{i}$. \\
+    
+    Term 1: \textbf{i.i.d.} - Independent And Identically Distributed Random variables \\
+    
+    \subsection{Types of Supervised Learning:}
+    \begin{itemize}
+        \item 
+            \textbf{Classification:} 
+            \begin{equation}
+                {Y \in {0, 1}} \text{or } {Y \in {-1, +1}}
+            \end{equation}
+            Predicting whether or not a given input belongs to one of two classes, typically in terms of true or false, or positive or negative. (e.g., face detection).
+            
+        \item
+             \textbf{Regression:} 
+            \begin{equation}
+                {Y \in \rm I\!R}
+            \end{equation}
+            Predicting a real number. (e.g., predicting gas prices).
+            
+        \item
+             \textbf{Multi-class Classification:} 
+            \begin{equation}
+                {Y \in {1, ..., K}}
+            \end{equation}
+            Predicting which of {K} classes an input belongs to. (e.g., face recognition). \\
+    \end{itemize}
+    
+    \subsection{Training vs. Testing Data}
+        \begin{itemize}
+            \item 
+                \textbf{Training:}
+                A learner {L} is given a set of training data {(x1,y1),…,(xn,yn)} and allowed to perform computations on the training data to learn an output function {h(x)}.
+                
+            \item 
+                \textbf{Testing:}
+                {L} is asked to generate predictions {$h(x_1)$, ..., $h(x_m)$} for a set of testing data. We can then compute an error metric or loss function to determine quantitatively if the learner correctly predicted the true outputs for the test examples. A common metric for classification tasks is the 0–1 loss, which is just the proportion of incorrect guesses
+                
+        \end{itemize}
+    
+    \subsection{Hypothesis Functions}
+    A list of arbitrary functions that we the scientists can pick from that we believe will best be able to fit the data. That is, the function that is best at taking and input and finding the associated label within a test setting
+    
+    we can describe the function we choose to be h within the arbitrarily large list of H functions which are known to be \textbf{Hypothesis Classes}.
+    
+    \subsection{Loss Functions:}
+    \begin{enumerate}
+        \item \textbf{0/1 Loss Function}:
+            We run this particular h over our dataset, D.
+            \begin{equation}
+                L_{0/1}(h) = \frac{1}{n}\sum_{i=1}^{n} \delta_{h(x_i)\neq y}
+            \end{equation}
+            where
+            \begin{equation}
+                \delta_{h(x_i)\neq y} = \begin{cases}
+                                            1,& \text{if } h(x_i)\neq y\\
+                                            0,& \text{otherwise}
+                                        \end{cases}
+            \end{equation}
+            For every single example it suffers a loss of 1 if it is mispredicted, and 0 otherwise. The normalized zero-one loss returns the fraction of misclassified training samples, also often referred to as the training error.
+            
+            The loss function returns the error rate on this data set D. 
+            
+        \item \textbf{Squared Loss:}
+            Typically used within regression, the square loss can be thought of as prediction minus the actual value. However there are trade offs made by using the square loss function. The loss suffered is always non-negative. Additionally, due to the square loss being quadratic that means outliers that made be off by a lot may make it seem like this function is doing worse than, lets say, a lot of points off by a little. 
+            
+            \begin{equation}
+                h(x) = E_{P(y\mid x)}[y]
+            \end{equation}
+            \begin{equation}
+                L_{sq}(h) = \frac{1}{n} \sum_{i=1}^{n} (h(x_i)-y_{i})^2
+            \end{equation}
+            
+        \item \textbf{Absolute Loss:}
+            to remedy the effect outliers within our potential dataset, D, we can you the absolute loss function that will not square the result but rather take the absolute value. This means that the suffered loss grows linearly 
+            
+            \begin{equation}
+                h(x) = \textbf{MEDIAN}_{P(y\mid x)}[y]
+            \end{equation}
+            \begin{equation}
+                L_{abs}(h) = \frac{1}{n} \sum_{i=1}^{n} \mid h(x_i)-y_{i} \mid
+            \end{equation}
+    \end{enumerate}
+    
+\section{k-Nearest Neighbors}
+    Remarks to keep in mind:
+    \begin{itemize}
+        \item 
+            choose an odd k value for a 2 class problem
+            
+        \item
+            k must not be a multiple of the number of classes
+            
+        \item
+            the main drawback of kNN is the complexity in searching the nearest neighbors for each sample
+    \end{itemize} 
+    
+\end{document}
