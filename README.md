@@ -11,6 +11,10 @@ You can choose which curriculum you want. If you choose Curriculum 1 you should 
    * [Great explanation of nearest neighbor](https://alliance.seas.upenn.edu/~cis520/dynamic/2016/wiki/index.php?n=Lectures.LocalLearning)
    * [Video Of KNN](https://www.youtube.com/watch?v=gdS0V35GqgQ)
    * [Video explanation of K-nearest neighbor classification](http://videolectures.net/aaai07_bosch_knnc/)
+   
+   Great explanations of the algorithm
+      * [How kNN algorithm works](https://www.youtube.com/watch?v=UqYde-LULfs)
+      * [k-Nearest Neighbor classification algorithm](https://www.youtube.com/watch?v=4ObVzTuFivY)
 3. [Perceptron](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote03.html)
 4. [Estimating Probabilities from data](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote04.html)
 5. [Bayes Classifier and Naive Bayes](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote05.html)

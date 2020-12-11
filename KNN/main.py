@@ -115,6 +115,10 @@ def max_distance():
 def minkowski_distance():
     return 0
 
+#Given KNN when K=1 and there are one of each class that need partitioned spaces 
+def Voronoi_Partition():
+    return 0
+
 
 
 
