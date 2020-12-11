@@ -2,11 +2,10 @@ import pandas as pd
 import numpy as np
 import torch
 import sys
-import os
+import os 
 
-directory_name = os.path.directory_name(__file__)
-filename = os.path.join(directory_name, input("Enter file path to .csv: "))
-
+dirname = os.path.dirname(__file__)
+filename = os.path.join(dirname, input("Enter file path to .csv with formatting like this: ./KNN/enterYourCSVnameHERE: "))
 
 if __name__ == '__main__':
     main()
@@ -71,7 +70,7 @@ def random_train_test_validation_split(dataset_df, train_perc):
 
 #Train/Test Split performed by splitting the inputs and their associated labels based off the time sensitive data
 def temporal_train_test_split():
-    return 0
+    return 0 
 
 #Temporal Test/Validation split will take the test set gained from Temporal_Train_Test_Split() and split the data within it into test and 
 #validation sets, based off the time component of the dataset
