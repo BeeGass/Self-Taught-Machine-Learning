@@ -32,7 +32,8 @@ def absolute_loss():
 
 #Distance from unknown datapoint to arbitrary datapoint in terms of coordinate blocks
 #p = 1 
-def manhattan_distance():
+def manhattan_distance(p_1, p_2):
+
     return 0
 
 #Distance from unknown datapoint to arbitrary datapoint
@@ -46,6 +47,9 @@ def max_distance():
 
 #Minkowski distance
 def minkowski_distance():
+    for index, row in df.iterrows():
+        for label, content in df.iteritems():
+            
     return 0
 
 #Given KNN when K=1 and there are one of each class that need partitioned spaces 

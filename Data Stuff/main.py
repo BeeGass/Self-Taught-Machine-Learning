@@ -26,7 +26,7 @@ def format_dataframe(dataset_df, label_str):
     
     label_col = dataset_df[label_str].pop() #pop the column off
 
-    X = dataset_df.insert(0, label_str, label_col) # add it back into the dataframe at the 0th index 
+    X = dataset_df.insert(-1, label_str, label_col) # add it back into the dataframe at the last index 
 
     return X
 
@@ -70,16 +70,30 @@ def random_train_test_validation_split(dataset_df, train_perc):
 
 #Train/Test Split performed by splitting the inputs and their associated labels based off the time sensitive data
 def temporal_train_test_split():
+
     return 0 
 
 #Temporal Test/Validation split will take the test set gained from Temporal_Train_Test_Split() and split the data within it into test and 
 #validation sets, based off the time component of the dataset
 def temporal_test_validation_split():
+
     return 0
 
 #adding noise to your validation, test or even training datasets maybe needed at times for testing models. This is what that is for 
-def noise_addition():
-    return 0
+# https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html
+def noise_addition(df, mu = 0):
+    sigma = float(input("sigma: "))
+
+    if input("would you like to change mu? y/n") == "y":
+        mu = float(input("enter mu value: "))
+
+    if sigma < 0:
+        noise_addition(df, mu)
+
+    noise = np.random.normal(mu, sigma, df.shape)
+    noisy_df = df + noise
+
+    return noisy_df
 
 
 
