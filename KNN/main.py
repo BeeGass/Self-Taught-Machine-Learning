@@ -3,6 +3,7 @@ import numpy as np
 import torch
 import sys
 import os 
+import math
 
 dirname = os.path.dirname(__file__)
 filename = os.path.join(dirname, input("Enter file path to .csv with formatting like this: ./KNN/enterYourCSVnameHERE: "))
@@ -14,43 +15,41 @@ def main():
     i = 0 
     return i
 
-#function that defines the label associated with the inputted input value. x_i -> y_i
-def hypothesis(x_i):
-    return 0
-
-#Loss function that calculates the effectiveness of the dataset by returning an error percentage
-def zero_one_loss():
-    return 0
-
-#Loss function that calculates the error in indivual inputs that when added up shows the error rate given the entire dataset
-def squared_loss():
-    return 0
-
-#Loss function to be used when the dataset has strong outliers that might scew the error if one were to use the Squared_Loss function 
-def absolute_loss():
-    return 0
-
 #Distance from unknown datapoint to arbitrary datapoint in terms of coordinate blocks
 #p = 1 
-def manhattan_distance(p_1, p_2):
+def manhattan_distance(dataset_df, the_row):
+    for row in dataset_df:
+        distance = minkowski_distance(the_row, row, 1)
 
-    return 0
+    return distance
 
 #Distance from unknown datapoint to arbitrary datapoint
 #p = 2
-def euclidean_distance():
-    return 0
+def euclidean_distance(dataset_df, the_row):
+    for row in dataset_df:
+        distance = minkowski_distance(the_row, row, 2)
 
-#p = 3
-def max_distance():
-    return 0
+    return distance
+
+#p = infinity
+def max_distance(dataset_df, the_row):
+    for row in dataset_df:
+        distance = minkowski_distance(the_row, row, math.inf)
+
+    return distance
 
 #Minkowski distance
-def minkowski_distance():
-    for index, row in df.iterrows():
-        for label, content in df.iteritems():
-            
-    return 0
+#row1 behaves as the arbitrary vector we wish to find distances from
+#row2 are all the vectors we will be calculating the distance to
+#p_val is the p_val the determines if you are doing manhattan, euclidean or max distance
+def minkowski_distance(row1, row2, p_val):
+
+    for i in range(len(row1) - 1): #we want everything but the label associated with vector
+         distance += (math.abs(row1[i] - row2[i]) ** p_val #go through each dimension of the vector and subtract it from the other
+
+    vec_dist = distance**(1/p_val)
+
+    return vec_dist
 
 #Given KNN when K=1 and there are one of each class that need partitioned spaces 
 def Voronoi_Partition():
