@@ -43,13 +43,12 @@ def max_distance(dataset_df, the_row):
 #row2 are all the vectors we will be calculating the distance to
 #p_val is the p_val the determines if you are doing manhattan, euclidean or max distance
 def minkowski_distance(row1, row2, p_val):
+    distance = 0.0
 
     for i in range(len(row1) - 1): #we want everything but the label associated with vector
-         distance += (math.abs(row1[i] - row2[i]) ** p_val #go through each dimension of the vector and subtract it from the other
+         distance += (math.abs(row1[i] - row2[i])) ** p_val #go through each dimension of the vector and subtract it from the other
 
-    vec_dist = distance**(1/p_val)
-
-    return vec_dist
+    return (distance ** (1.0 / p_val)) # (distance)^(1/p)
 
 #Given KNN when K=1 and there are one of each class that need partitioned spaces 
 def Voronoi_Partition():
