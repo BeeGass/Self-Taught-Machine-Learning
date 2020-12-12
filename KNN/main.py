@@ -46,7 +46,7 @@ def minkowski_distance(row1, row2, p_val):
     distance = 0.0
 
     for i in range(len(row1) - 1): #we want everything but the label associated with vector
-         distance += (math.abs(row1[i] - row2[i])) ** p_val #go through each dimension of the vector and subtract it from the other
+         distance += ((row1[i] - row2[i]).abs()) ** p_val #go through each dimension of the vector and subtract it from the other
 
     return (distance ** (1.0 / p_val)) # (distance)^(1/p)
 
