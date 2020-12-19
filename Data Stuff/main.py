@@ -69,14 +69,14 @@ def random_train_test_validation_split(dataset_df, train_perc):
     return train, test, validation
 
 #Train/Test Split performed by splitting the inputs and their associated labels based off the time sensitive data
-def temporal_train_test_split():
-
+def temporal_train_test_split():\
+    #TODO
     return 0 
 
 #Temporal Test/Validation split will take the test set gained from Temporal_Train_Test_Split() and split the data within it into test and 
 #validation sets, based off the time component of the dataset
 def temporal_test_validation_split():
-
+    #TODO 
     return 0
 
 #adding noise to your validation, test or even training datasets maybe needed at times for testing models. This is what that is for 
