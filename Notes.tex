@@ -18,19 +18,13 @@
     high level overview of supervised machine learning: attempts to make predictions from data 
     
 \subsection{Setup}
-    We are given a dataset $\textbf{D}$ within data set we have data points and their labels, where x is an input instance/ feature vector (or just input) and y is the label associated with that input. There are $\textbf{n}$ data points within a dataset. 
+    We are given a dataset $\textbf{D}$ within data set we have data points and their labels, where $x_i$ is D-dimensional vector. $x_i$ is considered to be an input instance/attribute/feature/covariate. $x_i$ also can be something much more complex like an image, a sentence or email, or molecular shape.  $y_i$ is the label associated with that feature vector/input. There are also $\textbf{n}$ data points within a dataset, $\textbf{D}$. \\
+    
+    It should be noted the difference between x and $x_i$ as well as y and $y_i$. $x_i$ can be thought of the $\textbf{feature vector}$ that we are looking to train our model on, while generally speaking x is the feature vector that behaves as a testing input, thus why we refer to it as a $\textbf{test input}$. This idea carries over to y and $y_i$. $y_i$ is the label that we use to check the validity of our feature vector $x_i$. y is the output or the $\textbf{response variable}$ that is associated with the test input. \\
     
     \begin{equation}
         D = {(x_1, y_1), ..., (x_n, y_n)}
     \end{equation}
-    
-    \begin{enumerate}
-        \item Example 1: 
-            Given a classifier that determines if something is spam or not we could view x as the email and y as a label that is either "spam" or "not spam"
-            
-        \item Example 2:
-            Given a classifier that determines if the stock market is rising or falling we can view the x as the stock and the y as the label that is either "up" or "down"
-    \end{enumerate}
     
     \begin{itemize}
         \item 
@@ -51,18 +45,37 @@
         (x_{i}, y_{i}) \sim P
     \end{equation} \\
     
-    \textbf{The Idea of Supervised Learning:} to take our data set that contains the data points, $x_{i}$, and our labels ,$y_{i}$, to "learn" a function that can goes from $x_{i}$ to $y_{i}$. \\
+    \textbf{The Idea of Supervised Learning:} to take our data set that contains the data points, $x_{i}$, and our labels ,$y_{i}$, to "learn" a function that can goes from $x_{i}$ to $y_{i}$. This also can be thought of as trying to "learn" a model such that it can adequately map  inputs x to outputs y, given by a input-output pair, our training set. Denoted as: \\
     
-    Term 1: \textbf{i.i.d.} - Independent And Identically Distributed Random variables \\
+    \begin{equation}
+        D = {(x_{i}, y_{i})}_{i=1}^N
+    \end{equation}
     
-    \subsection{Types of Supervised Learning:}
+    Where D is called the training set and N is the number of training examples 
+    \\
+    
+    Term 1: \textbf{i.i.d.} - Independent And Identically Distributed Random variables 
+    \\
+    
+    \subsection{Supervised Learning:}
+    Most methods will assume that $y_i$, the label, is either a categorical or nominal variable. given $y_{i} \in {1,..., C}$ When $y_i$ is categorical (male or female) then it is considered a $\textbf{classification problem}$. When $y_i$ is a real valued scalar (like house prices) is considered to be a $\textbf{regression problem}$. Another variant of this is when $y_i$ has some type of natural ordering to it, such as grade values from A to F, this is considered to be $\textbf{ordinal regression}$.   
+    
     \begin{itemize}
         \item 
-            \textbf{Classification:} 
+            \textbf{Binary Classification:} 
+            if $C=2$ then this is considered to be a binary classification problem
             \begin{equation}
-                {Y \in {0, 1}} \text{or } {Y \in {-1, +1}}
+                {y \in {0, 1}} \text{ or } {y \in {-1, +1}}
             \end{equation}
-            Predicting whether or not a given input belongs to one of two classes, typically in terms of true or false, or positive or negative. (e.g., face detection).
+            Predicting whether or not a given input belongs to one of two classes, typically in terms of true or false, or positive or negative. (e.g., face detection). 
+            
+                \begin{enumerate}
+                    \item Example 1: 
+                        Given a classifier that determines if something is spam or not we could view x as the email and y as a label that is either "spam" or "not spam"
+            
+                    \item Example 2:
+                        Given a classifier that determines if the stock market is rising or falling we can view the x as the stock and the y as the label that is either "up" or "down"
+                \end{enumerate}
             
         \item
              \textbf{Regression:} 
@@ -74,10 +87,20 @@
         \item
              \textbf{Multi-class Classification:} 
             \begin{equation}
-                {Y \in {1, ..., K}}
+                {y \in {1, ..., C}} \text{ Where C is a discrete number. }
             \end{equation}
-            Predicting which of {K} classes an input belongs to. (e.g., face recognition). \\
+            Predicting which of {K} classes an input belongs to. (e.g., face recognition). 
+            
+        \item 
+            \textbf{Multi-label Classification}
+            When there are many class labels that are not mutually exclusive to one another (tall but not strong). Generally speaking this is comparing many non-mutually exclusive binary classifications to one another, but is not always the case. 
     \end{itemize}
+    
+    \subsection{Unsupervised Learning:}
+        Within unsupervised learning we are only given the feature vectors $x_i$, without the label $y_i$, where we are tasked to find "interesting patterns". This is often called $\textbf{Knowledge Discovery}$. This is denoted by:
+        \begin{equation}
+            D = {(x_i)}_{i=1}^N
+        \end{equation}
     
     \subsection{Training vs. Testing Data}
         \begin{itemize}
@@ -146,6 +169,10 @@
             
         \item
             the main drawback of kNN is the complexity in searching the nearest neighbors for each sample
-    \end{itemize} 
+    \end{itemize} \\
+    
+    
+        
+    
     
 \end{document}
