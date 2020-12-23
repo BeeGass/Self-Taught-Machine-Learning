@@ -120,6 +120,7 @@ For answers for "An Introduction To Statistical Learning With Applications In R"
 * https://www.kaggle.com/lmorgan95/notebooks
 * For Answers Specific In Python:
   * https://botlnec.github.io/islp/
+  * [Introduction To Statistical Learning With Application In Python](https://github.com/tdpetrou/Machine-Learning-Books-With-Python/tree/master/Introduction%20to%20Statistical%20Learning)
 
 For answers for "Pattern Recognition and Machine Learning" refer to: 
 * [Chapter Overviews and Solutions](https://tommyodland.com/files/edu/bishop_solutions.pdf)
