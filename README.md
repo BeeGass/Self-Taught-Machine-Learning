@@ -2,9 +2,6 @@
 # Self Taught Machine Learning
 [From Knowing Nothing To Being An AI Expert: Roadmap](https://i.am.ai/roadmap)
 
-## Curriculum Overview
-You can choose which curriculum you want. If you choose Curriculum 1 you should refer to all the other material in this README. If you choose Curriculum 2 stick to Andrew Ng's curriculum. You can also use one to supplement the other 
-
 ## CURRICULUM 1: [Cornell's](https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS)
 1. [Machine Learning Setup](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote01_MLsetup.html)
 2. [k-Nearest Neighbors / Curse of Dimensionality](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote02_kNN.html)
@@ -123,6 +120,7 @@ For answers for "An Introduction To Statistical Learning With Applications In R"
 * https://www.kaggle.com/lmorgan95/notebooks
 * For Answers Specific In Python:
   * https://botlnec.github.io/islp/
+  * [Introduction To Statistical Learning With Application In Python](https://github.com/tdpetrou/Machine-Learning-Books-With-Python/tree/master/Introduction%20to%20Statistical%20Learning)
 
 For answers for "Pattern Recognition and Machine Learning" refer to: 
 * [Chapter Overviews and Solutions](https://tommyodland.com/files/edu/bishop_solutions.pdf)
