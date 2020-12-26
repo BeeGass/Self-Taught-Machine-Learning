@@ -1,9 +1,12 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt 
+import seaborn as sns 
 import torch
 import sys
 import os 
 import math
+import "~/Data Stuff/main.py" import main 
 
 dirname = os.path.dirname(__file__)
 filename = os.path.join(dirname, input("Enter file path to .csv with formatting like this: ./KNN/enterYourCSVnameHERE: "))
@@ -77,18 +80,28 @@ def get_k_nearest_neighbors(sorted_dist_list, k_value):
 
     return neighbors
 
-def get_class_k_nearest_neighbors(k_neighbors_list, classes_dict):
-    classes_dict = {}
+# def get_most_freq_class(k_neighbors_list):
+#     classes_dict = {}
 
-    for i in range(len(k_neighbors_list)): #for all the classes within the k_neighbors_list we populate a class dictionary  
-        if k_neighbors_list[i][-1] not in classes_dict: #if this particular class is not within the dictionary then
-            classes_dict[k_neighbors_list[i][-1]] =+ 1 #we increment the amount of that particular class that is within the dictionary
-        else:
-            classes_dict[k_neighbors_list[i][-1]] = 1 #if the class is not within the dictionary we assign that there is now 1 of that class now
+#     for i in range(len(k_neighbors_list)): #for all the classes within the k_neighbors_list we populate a class dictionary  
+#         if k_neighbors_list[i][-1] not in classes_dict: #if this particular class is not within the dictionary then
+#             classes_dict[k_neighbors_list[i][-1]] =+ 1 #we increment the amount of that particular class that is within the dictionary
+#         else:
+#             classes_dict[k_neighbors_list[i][-1]] = 1 #if the class is not within the dictionary we assign that there is now 1 of that class now
 
-    sorted_class_dict = sorted(classes_dict.items(), key=lambda x: x[1], reverse=True) #we now sort the dictionary based on how many of a particular class is within it 
+#     sorted_class_dict = sorted(classes_dict.items(), key=lambda x: x[1], reverse=True) #we now sort the dictionary based on how many of a particular class is within it 
 
-    return sorted_class_dict[0][0] #we return the class with the most amount of presence to show the K_nearest_neighbor label
+#     return sorted_class_dict[0][0] #we return the class with the most amount of presence to show the K_nearest_neighbor label
+
+
+def get_most_freq_class(k_neighbors_list):
+    knl = k_neighbors_list
+
+    return max(knl, key=lambda x: x[-1]) #get the class that occurs most within the list of knl
+
+def visualize_k_neighest_neighbors(k_value, neighbors_list, test_instance):
+    
+    return 
 
 #Given KNN when K=1 and there are one of each class that need partitioned spaces 
 def Voronoi_Partition():

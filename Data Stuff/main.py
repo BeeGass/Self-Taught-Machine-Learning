@@ -3,16 +3,45 @@ import numpy as np
 import torch
 import sys
 import os 
-
-dirname = os.path.dirname(__file__)
-filename = os.path.join(dirname, input("Enter file path to .csv with formatting like this: ./KNN/enterYourCSVnameHERE: "))
+from urllib.request import urlretrieve
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv)
 
-def main():
-    i = 0 
-    return i
+def main(argv):
+    og_dataset = choose_dataset(argv[1]) 
+    output_list = []
+
+    label_str_input = input("Please input the string associated with the column that contains the classes: ")
+    the_dataset = format_dataframe(og_dataset, label_str_input)
+
+    if argv[2] == 0:
+        train_perc_input = float(input("Please input a value between 0 and 1 that signifies how large of a training set ratio you would like: "))
+        train_set, test_set = random_train_test_split(the_dataset, train_perc_input)
+        output_list.extend(train_set, test_set)
+    
+    elif argv[2] == 1:
+        train_perc_input = float(input("Please input a value between 0 and 1 that signifies how large of a training set/validation set/testing set ratio you would like: "))
+        train_set, test_set, validation_set = random_train_test_validation_split(the_dataset, train_perc_input)
+        output_list.extend(train_set, test_set, validation_set)
+
+    return output_list
+
+def choose_dataset(dataset_title_input):
+    input = dataset_title_input
+    dataset = None 
+
+    if input == "iris": #iris datset
+        iris = 'http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+        urlretrieve(iris)
+        dataset = pd.read_csv(iris, sep=',')
+
+    else:
+        dirname = os.path.dirname(__file__)
+        filename = os.path.join(dirname, input("Enter file path to .csv with formatting like this: ./KNN/enterYourCSVnameHERE: "))
+        dataset = workable_csv(filename)
+
+    return dataset 
 
 #given a csv file this function will convert the CSV into a workable pandas dataframe
 def workable_csv(filename):
@@ -37,6 +66,7 @@ def format_dataframe(dataset_df, label_str):
 #                  Training set                     |   Testing Set  |
 #                                                   |                |
 #---------------------------------------------------#----------------#
+#train_per should be a value between 0 and 1, eg. train_perc 0.8
 def random_train_test_split(dataset_df, train_perc):
     dataset_df_copy = dataset_df.copy()
 
