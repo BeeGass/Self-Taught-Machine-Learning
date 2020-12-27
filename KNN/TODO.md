@@ -9,4 +9,3 @@
 - [ ] Create a function that finds the identifies the class of a point and shows the most frequent class available 
 - [ ] visualize training points and the test instance 
 - [ ] visualize grouping of kNN 
-- [ ] 
