@@ -6,7 +6,10 @@ import torch
 import sys
 import os 
 import math
-import "~/Data Stuff/main.py" import main 
+sys.path.append('C:\\Users\\Bryan\\Documents\\Coding\\github\\Self_Taught_Machine_Learning\\Data_Stuff\\')
+for line in sys.path:
+    print(line)
+import Data_Stuff.data_manipulation
 
 dirname = os.path.dirname(__file__)
 filename = os.path.join(dirname, input("Enter file path to .csv with formatting like this: ./KNN/enterYourCSVnameHERE: "))
@@ -14,9 +17,13 @@ filename = os.path.join(dirname, input("Enter file path to .csv with formatting 
 if __name__ == '__main__':
     main()
 
+
+
 def main():
-    i = 0 
-    return i
+
+    return 0
+
+
 
 #Distance from unknown datapoint to arbitrary datapoint in terms of coordinate blocks
 #p = 1 
@@ -29,6 +36,8 @@ def manhattan_distance(dataset_df, the_row):
 
     return distances
 
+
+
 #Distance from unknown datapoint to arbitrary datapoint
 #p = 2
 def euclidean_distance(dataset_df, the_row):
@@ -40,6 +49,8 @@ def euclidean_distance(dataset_df, the_row):
 
     return distances
 
+
+
 #p = infinity
 def max_distance(dataset_df, the_row):
     distances = []
@@ -49,6 +60,8 @@ def max_distance(dataset_df, the_row):
         distances.append((row, dist))
 
     return distances
+
+
 
 #Minkowski distance
 #row1 behaves as the arbitrary vector we wish to find distances from
@@ -64,12 +77,15 @@ def minkowski_distance(row1, row2, p_val):
 
     return the_dist
 
+
+
 def distance_prediction(train_set, test_instance):
     
     dist_list = euclidean_distance(train_set, test_instance[0])
     sorted_dist_list = dist_list.sort(key = (lambda x: x[1])) #we sort the list based off the value of the distance. this will give us smallest values closer to 0th index
 
     return sorted_dist_list
+
 
 
 def get_k_nearest_neighbors(sorted_dist_list, k_value):
@@ -99,9 +115,13 @@ def get_most_freq_class(k_neighbors_list):
 
     return max(knl, key=lambda x: x[-1]) #get the class that occurs most within the list of knl
 
+
+
 def visualize_k_neighest_neighbors(k_value, neighbors_list, test_instance):
     
     return 
+
+
 
 #Given KNN when K=1 and there are one of each class that need partitioned spaces 
 def Voronoi_Partition():
