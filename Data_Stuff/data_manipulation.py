@@ -6,9 +6,14 @@ import os
 from urllib.request import urlretrieve
 
 if __name__ == '__main__':
-    main(sys.argv)
+    main()
 
-def main(argv):
+def main():
+    dataset = do_data_stuff(sys.argv)
+
+    return dataset
+
+def do_data_stuff(argv):
     og_dataset = choose_dataset(argv[1]) 
     output_list = []
 

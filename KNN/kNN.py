@@ -6,33 +6,57 @@ import torch
 import sys
 import os 
 import math
-sys.path.append('C:\\Users\\Bryan\\Documents\\Coding\\github\\Self_Taught_Machine_Learning\\Data_Stuff\\')
+sys.path.append('../')
 for line in sys.path:
     print(line)
-import Data_Stuff.data_manipulation
 
-dirname = os.path.dirname(__file__)
-filename = os.path.join(dirname, input("Enter file path to .csv with formatting like this: ./KNN/enterYourCSVnameHERE: "))
+from Data_Stuff.data_manipulation import do_data_stuff 
 
 if __name__ == '__main__':
     main()
 
-
-
 def main():
+    datasets = do_data_stuff(sys.argv)
+
+    train_set = datasets[0]
+    test_set = datasets[1]
+    validation_set = None
+    
+    if len(datasets) == 3:
+        validation_set = datasets[2]
+
+    test_instance = get_testing_instance(test_set)
+    distance_list = distance_prediction(train_set, test_instance)
+    k_value = int(input("What would you like your k value to be: "))
+    neighbors = get_k_nearest_neighbors(distance_list, k_value)
+    get_most_freq_class(neighbors)
 
     return 0
+
+
+#goes through test_set dataframe and picks row at random to behave as the testing row
+#------INPUTS-------
+#input_test_set: the testing set data frame
+def get_testing_instance(input_test_set):
+    df = input_test_set
+
+    the_row = df.sample(n=1) #take only one row to test
+
+    return the_row
 
 
 
 #Distance from unknown datapoint to arbitrary datapoint in terms of coordinate blocks
 #p = 1 
-def manhattan_distance(dataset_df, the_row):
+#------INPUTS-------
+#dataset_df: a dataframe that should be a training set
+#the_testing_row: the vector that represent the point that is going to be tested to see what class it falls under
+def manhattan_distance(dataset_df, the_testing_row):
     distances = []
 
-    for row in dataset_df:
-        dist = minkowski_distance(the_row, row, 1)
-        distances.append(row, dist)
+    for a_row in dataset_df:
+        dist = minkowski_distance(the_testing_row, a_row, 1)
+        distances.append(a_row, dist)
 
     return distances
 
@@ -40,30 +64,37 @@ def manhattan_distance(dataset_df, the_row):
 
 #Distance from unknown datapoint to arbitrary datapoint
 #p = 2
-def euclidean_distance(dataset_df, the_row):
+#------INPUTS-------
+#dataset_df: a dataframe that should be a training set
+#the_testing_row: the vector that represent the point that is going to be tested to see what class it falls under
+def euclidean_distance(dataset_df, the_testing_row):
     distances = []
 
-    for row in dataset_df:
-        dist = minkowski_distance(the_row, row, 2)
-        distances.append(row, dist)
+    for a_row in dataset_df:
+        dist = minkowski_distance(the_testing_row, a_row, 2)
+        distances.append(a_row, dist)
 
     return distances
 
 
 
 #p = infinity
-def max_distance(dataset_df, the_row):
+#------INPUTS-------
+#dataset_df: a dataframe that should be a training set
+#the_testing_row: the vector that represent the point that is going to be tested to see what class it falls under
+def max_distance(dataset_df, the_testing_row):
     distances = []
 
-    for row in dataset_df:
-        dist = minkowski_distance(the_row, row, math.inf)
-        distances.append((row, dist))
+    for a_row in dataset_df:
+        dist = minkowski_distance(the_testing_row, a_row, math.inf)
+        distances.append((a_row, dist))
 
     return distances
 
 
 
 #Minkowski distance
+#------INPUTS-------
 #row1 behaves as the arbitrary vector we wish to find distances from
 #row2 are all the vectors we will be calculating the distance to
 #p_val is the p_val the determines if you are doing manhattan, euclidean or max distance
@@ -78,7 +109,9 @@ def minkowski_distance(row1, row2, p_val):
     return the_dist
 
 
-
+#------INPUTS-------
+#train_set: a dataframe that is the training set
+#test_instance: the vector that represent the point that is going to be tested 
 def distance_prediction(train_set, test_instance):
     
     dist_list = euclidean_distance(train_set, test_instance[0])
@@ -87,7 +120,9 @@ def distance_prediction(train_set, test_instance):
     return sorted_dist_list
 
 
-
+#------INPUTS-------
+#sorted_dist_list: a list of distances from smalles to greatest as well as the vector assocated with distance
+#k_value: k is the value determined by the user and reflects the (k) number of shortest distances from the test instances we will accept 
 def get_k_nearest_neighbors(sorted_dist_list, k_value):
     neighbors = []
 
@@ -110,6 +145,8 @@ def get_k_nearest_neighbors(sorted_dist_list, k_value):
 #     return sorted_class_dict[0][0] #we return the class with the most amount of presence to show the K_nearest_neighbor label
 
 
+#------INPUTS-------
+#k_neighbors_list: k number of values closest to our test_instance in terms of the row associated with the distance
 def get_most_freq_class(k_neighbors_list):
     knl = k_neighbors_list
 
