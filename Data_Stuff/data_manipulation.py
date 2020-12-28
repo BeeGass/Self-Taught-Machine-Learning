@@ -13,6 +13,9 @@ def main():
 
     return dataset
 
+#------INPUTS-------
+#argv[1]:
+#argv[2]:
 def do_data_stuff(argv):
     og_dataset = choose_dataset(argv[1]) 
     output_list = []
@@ -123,6 +126,7 @@ def noise_addition(df, mu = 0):
         mu = float(input("enter mu value: "))
 
     if sigma < 0:
+        print("please put in a sigma greater than or equal to zero")
         noise_addition(df, mu)
 
     noise = np.random.normal(mu, sigma, df.shape)

@@ -7,8 +7,6 @@ import sys
 import os 
 import math
 sys.path.append('../')
-for line in sys.path:
-    print(line)
 
 from Data_Stuff.data_manipulation import do_data_stuff 
 
