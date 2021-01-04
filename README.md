@@ -13,7 +13,7 @@
       * [How kNN algorithm works](https://www.youtube.com/watch?v=UqYde-LULfs)
       * [k-Nearest Neighbor classification algorithm](https://www.youtube.com/watch?v=4ObVzTuFivY)
       
-   I Learned About PCA's (Principal Component Analysis) To Get My KNN To Work, This Is What I Used
+   I Learned About [PCA's](https://en.wikipedia.org/wiki/Principal_component_analysis) (Principal Component Analysis) To Get My KNN To Work, This Is What I Used
       * [Start With This](https://www.youtube.com/watch?v=FgakZw6K1QQ)
       * [Incredible Description Of Everything You Will Need](https://drscotthawley.github.io/blog/2019/12/21/PCA-From-Scratch.html#Covariance)
       
