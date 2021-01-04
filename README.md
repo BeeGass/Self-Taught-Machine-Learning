@@ -158,14 +158,14 @@ For answers for "Machine Learning: A Probabilistic Perspective" refer to:
   * [Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/)
   * [Matrix Methods in Data Analysis, Signal Processing, and Machine Learning](https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/)
 
-##Music I Listened To During This Journey
-  Lofi-Kinda
-    * [OP-1 05-28-17 (I Need U)](https://www.youtube.com/watch?v=7z4hoazra_g)
-    * [code-fi / lofi beats to code/relax to](https://www.youtube.com/watch?v=f02mOEt11OQ&t=221s)
-    * [RAINING IN ＮＡＧＯＹＡ (Lofi HipHop) Extended Version](https://www.youtube.com/watch?v=0te6noMKffA&list=WL&index=120&t=20s)
-    * [코딩 / 과제 할 때 집중 해서 듣기 좋은 음악🌃 | 3 hour playlist | beats to coding to | lofi, jazz, hiphop |](https://www.youtube.com/watch?v=0xJxgvJO2Xo&list=WL&index=121&t=62s)
-    
-  BROWN
-    * [SKSSSSHHHHHHHHHHH](https://www.youtube.com/watch?v=RqzGzwTY-6w&t=5361s)
+## Music I Listened To During This Journey
+* Lofi-Kinda
+  * [OP-1 05-28-17 (I Need U)](https://www.youtube.com/watch?v=7z4hoazra_g)
+  * [code-fi / lofi beats to code/relax to](https://www.youtube.com/watch?v=f02mOEt11OQ&t=221s)
+  * [RAINING IN ＮＡＧＯＹＡ (Lofi HipHop) Extended Version](https://www.youtube.com/watch?v=0te6noMKffA&list=WL&index=120&t=20s)
+  * [코딩 / 과제 할 때 집중 해서 듣기 좋은 음악🌃 | 3 hour playlist | beats to coding to | lofi, jazz, hiphop |](https://www.youtube.com/watch?v=0xJxgvJO2Xo&list=WL&index=121&t=62s)
+
+* BROWN
+  * [SKSSSSHHHHHHHHHHH](https://www.youtube.com/watch?v=RqzGzwTY-6w&t=5361s)
     
     
