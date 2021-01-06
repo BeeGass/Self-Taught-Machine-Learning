@@ -16,7 +16,8 @@
    I Learned About [PCA's](https://en.wikipedia.org/wiki/Principal_component_analysis) (Principal Component Analysis) To Get My KNN To Work, This Is What I Used
       * [Start With This](https://www.youtube.com/watch?v=FgakZw6K1QQ)
       * [Incredible Description Of Everything You Will Need](https://drscotthawley.github.io/blog/2019/12/21/PCA-From-Scratch.html)
-      Other Things You Should Use
+      
+      Other Resoucres To Check Out For PCA:
         * [Machine Learning Mastery's PCA From Scratch](https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/)
         * [Another Youtube Explanation of PCA](https://www.youtube.com/watch?v=g-Hb26agBFg)
         * [Implementing PCA In Pratice](https://sebastianraschka.com/Articles/2014_pca_step_by_step.html)
