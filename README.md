@@ -5,7 +5,7 @@
 ## CURRICULUM 1: [Cornell's](https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS)
 1. [Machine Learning Setup](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote01_MLsetup.html)
 2. [k-Nearest Neighbors / Curse of Dimensionality](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote02_kNN.html)
-   ### 2.1 KNN Resources 
+   #### 2.1 KNN Resources 
    * [Great explanation of nearest neighbor](https://alliance.seas.upenn.edu/~cis520/dynamic/2016/wiki/index.php?n=Lectures.LocalLearning)
    * [Video Of KNN](https://www.youtube.com/watch?v=gdS0V35GqgQ)
    * [Video explanation of K-nearest neighbor classification](http://videolectures.net/aaai07_bosch_knnc/)
@@ -14,7 +14,7 @@
       * [How kNN algorithm works](https://www.youtube.com/watch?v=UqYde-LULfs)
       * [k-Nearest Neighbor classification algorithm](https://www.youtube.com/watch?v=4ObVzTuFivY)
       
-   ### 2.2 PCA Resources
+   #### 2.2 PCA Resources
    I Learned About [PCA's](https://en.wikipedia.org/wiki/Principal_component_analysis) (Principal Component Analysis) To Get My KNN To Work, This Is What I Used
       * [Start With This](https://www.youtube.com/watch?v=FgakZw6K1QQ)
       * [Incredible Description Of Everything You Will Need](https://drscotthawley.github.io/blog/2019/12/21/PCA-From-Scratch.html)
