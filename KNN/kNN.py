@@ -157,7 +157,6 @@ def visualize_k_neighest_neighbors(k_value, neighbors_list, test_instance):
     return 
 
 
-
 #Given KNN when K=1 and there are one of each class that need partitioned spaces 
 def Voronoi_Partition():
     return 0

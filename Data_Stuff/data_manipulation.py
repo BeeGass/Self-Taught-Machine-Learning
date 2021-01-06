@@ -117,6 +117,30 @@ def temporal_test_validation_split():
     #TODO 
     return 0
 
+#for getting caught up on the concepts of what PCA is: https://www.youtube.com/watch?v=FgakZw6K1QQ
+#  
+def principal_component_analysis(dataset_df, n_components):
+    dataset_np = dataset_df.to_numpy() #converts the dataframe into a numpy array
+
+    mean_df = np.mean(dataset_np, axis=0) # here we find the mean of each row of the transformed matrix that was orginally dataset_np. The idea behind this is to eventually subtract our mean_df by dataset_df in order to center it to the origin. This can be best thought of as data that is on a number line and almost all of the data is near x = -53. In order to perform PCA we need to have the data centered at the origin. 
+    
+    centered_matrix = dataset_df - mean_df #centering of the data about the origin. 
+
+    correlation_matrix = np.cov(centered_matrix, rowvar=False) #this determines how different the multidemensional variables are from one another  
+
+    eigen_values, eigen_vectors = np.linalg.eig(correlation_matrix) #this decomposes the eigenvalues and eigenvectors. "The eigenvectors represent the directions or components for the reduced subspace of B, whereas the eigenvalues represent the magnitudes for the directions" https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/
+
+    sorted_index = np.argsort(eigen_values)[::-1] # sorting in a descending order in order for the eigenvalues to correspond to respective eigenvector 
+    sorted_eigen_value = eigen_values[sorted_index]
+
+    sorted_eigen_vectors = eigen_vectors[:,sorted_index]
+
+    eigenvector_subset = sorted_eigen_vectors[:,0:n_components] # returns a n_component dimensional matrix
+
+    reduced_matrix = np.dot(eigenvector_subset.transpose(),centered_matrix.transpose()).transpose()
+
+    return reduced_matrix
+
 #adding noise to your validation, test or even training datasets maybe needed at times for testing models. This is what that is for 
 # https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html
 def noise_addition(df, mu = 0):
