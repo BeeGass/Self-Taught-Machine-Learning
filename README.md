@@ -17,10 +17,10 @@
       * [Start With This](https://www.youtube.com/watch?v=FgakZw6K1QQ)
       * [Incredible Description Of Everything You Will Need](https://drscotthawley.github.io/blog/2019/12/21/PCA-From-Scratch.html)
       
-      Other Resoucres To Check Out For PCA:
-        * [Machine Learning Mastery's PCA From Scratch](https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/)
-        * [Another Youtube Explanation of PCA](https://www.youtube.com/watch?v=g-Hb26agBFg)
-        * [Implementing PCA In Pratice](https://sebastianraschka.com/Articles/2014_pca_step_by_step.html)
+   Other Resoucres To Check Out For PCA:
+      * [Machine Learning Mastery's PCA From Scratch](https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/)
+      * [Another Youtube Explanation of PCA](https://www.youtube.com/watch?v=g-Hb26agBFg)
+      * [Implementing PCA In Pratice](https://sebastianraschka.com/Articles/2014_pca_step_by_step.html)
       
 3. [Perceptron](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote03.html)
 4. [Estimating Probabilities from data](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote04.html)
