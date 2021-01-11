@@ -5,44 +5,60 @@ import sys
 import os 
 from urllib.request import urlretrieve
 
-if __name__ == '__main__':
-    main()
-
 def main():
-    dataset = do_data_stuff(sys.argv)
+    dataset = []
+    dataset = do_data_stuff()
 
     return dataset
 
-#------INPUTS-------
-#argv[1]:
-#argv[2]:
-def do_data_stuff(argv):
-    og_dataset = choose_dataset(argv[1]) 
+
+def do_data_stuff():
+    og_dataset = choose_dataset() 
     output_list = []
 
-    label_str_input = input("Please input the string associated with the column that contains the classes: ")
+    label_str_input = str(input("Please input the string associated with the column that contains the label: "))
     the_dataset = format_dataframe(og_dataset, label_str_input)
 
-    if argv[2] == 0:
+    ttv_binary_bool = int(input("0 for train-test split, 1 for train-test-validation split: "))
+    if ttv_binary_bool == 0:
         train_perc_input = float(input("Please input a value between 0 and 1 that signifies how large of a training set ratio you would like: "))
         train_set, test_set = random_train_test_split(the_dataset, train_perc_input)
-        output_list.extend(train_set, test_set)
+        output_list.append(train_set)
+        output_list.append(test_set)
     
-    elif argv[2] == 1:
+    elif ttv_binary_bool == 1:
         train_perc_input = float(input("Please input a value between 0 and 1 that signifies how large of a training set/validation set/testing set ratio you would like: "))
         train_set, test_set, validation_set = random_train_test_validation_split(the_dataset, train_perc_input)
         output_list.extend(train_set, test_set, validation_set)
+        output_list.append(train_set)
+        output_list.append(test_set)
+        output_list.append(validation_set)
+
+    pca_bool = int(input("Would you like to perform PCA on this data? O for yes, 1 for No: "))
+    if pca_bool == 0:
+        n_components = int(input("What dimensionality would you like your data to be? Please give the number of dimensions: "))
+
+        new_output_list = []
+        for i in range(len(output_list)):
+            new_output_list.append(principal_component_analysis(output_list[i], n_components))
+
+        output_list = []
+        output_list = new_output_list
 
     return output_list
 
-def choose_dataset(dataset_title_input):
-    input = dataset_title_input
+
+def choose_dataset():
+    input_var = str(input("Please type the name of the dataset you wish to use. If you plan to use a dataset that is not provided then say no: "))
     dataset = None 
 
-    if input == "iris": #iris datset
+    if input_var == "iris": #iris datset
         iris = 'http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
         urlretrieve(iris)
-        dataset = pd.read_csv(iris, sep=',')
+        df = pd.read_csv(iris, sep=',')
+        attributes = ["sepal_length", "sepal_width", "petal_length", "petal_width", "class"]
+        df.columns = attributes
+        dataset = df
 
     else:
         dirname = os.path.dirname(__file__)
@@ -61,11 +77,12 @@ def workable_csv(filename):
 #label_str is the string associated with the column that contains the labels
 def format_dataframe(dataset_df, label_str):
     
-    label_col = dataset_df[label_str].pop() #pop the column off
+    label_col = dataset_df.pop(label_str) #pop the column off
 
-    X = dataset_df.insert(-1, label_str, label_col) # add it back into the dataframe at the last index 
+    dataset_df[label_str] = label_col # add it back into the dataframe at the last index 
+    #dataset_df[label_col].insert(-1, label_str, label_col) # add it back into the dataframe at the last index 
 
-    return X
+    return dataset_df
 
 
 #Train/Test Split performed by randomly taking inputs and their associated labels and assigning them to either a training group or a test group
@@ -124,7 +141,7 @@ def principal_component_analysis(dataset_df, n_components):
 
     mean_df = np.mean(dataset_np, axis=0) # here we find the mean of each row of the transformed matrix that was orginally dataset_np. The idea behind this is to eventually subtract our mean_df by dataset_df in order to center it to the origin. This can be best thought of as data that is on a number line and almost all of the data is near x = -53. In order to perform PCA we need to have the data centered at the origin. 
     
-    centered_matrix = dataset_df - mean_df #centering of the data about the origin. 
+    centered_matrix = dataset_np - mean_df #centering of the data about the origin. 
 
     correlation_matrix = np.cov(centered_matrix, rowvar=False) #this determines how different the multidemensional variables are from one another  
 
@@ -158,7 +175,8 @@ def noise_addition(df, mu = 0):
 
     return noisy_df
 
-
+if __name__ == '__main__':
+    main()
 
 
 

@@ -7,11 +7,7 @@ import sys
 import os 
 import math
 sys.path.append('../')
-
-from Data_Stuff.data_manipulation import do_data_stuff 
-
-if __name__ == '__main__':
-    main()
+from ..Data_Stuff.data_manipulation import do_data_stuff 
 
 def main():
     datasets = do_data_stuff(sys.argv)
@@ -77,6 +73,7 @@ def euclidean_distance(dataset_df, the_testing_row):
 
 
 #p = infinity
+#A little description of what this is doing to future Bryan: Basically we know that in a "p" dimensional world that things become to get impossibly large. In order to correctly get the distance between 2 different things we need to find the p-distance in the p-dimensional space
 #------INPUTS-------
 #dataset_df: a dataframe that should be a training set
 #the_testing_row: the vector that represent the point that is going to be tested to see what class it falls under
@@ -129,19 +126,6 @@ def get_k_nearest_neighbors(sorted_dist_list, k_value):
 
     return neighbors
 
-# def get_most_freq_class(k_neighbors_list):
-#     classes_dict = {}
-
-#     for i in range(len(k_neighbors_list)): #for all the classes within the k_neighbors_list we populate a class dictionary  
-#         if k_neighbors_list[i][-1] not in classes_dict: #if this particular class is not within the dictionary then
-#             classes_dict[k_neighbors_list[i][-1]] =+ 1 #we increment the amount of that particular class that is within the dictionary
-#         else:
-#             classes_dict[k_neighbors_list[i][-1]] = 1 #if the class is not within the dictionary we assign that there is now 1 of that class now
-
-#     sorted_class_dict = sorted(classes_dict.items(), key=lambda x: x[1], reverse=True) #we now sort the dictionary based on how many of a particular class is within it 
-
-#     return sorted_class_dict[0][0] #we return the class with the most amount of presence to show the K_nearest_neighbor label
-
 
 #------INPUTS-------
 #k_neighbors_list: k number of values closest to our test_instance in terms of the row associated with the distance
@@ -161,7 +145,8 @@ def visualize_k_neighest_neighbors(k_value, neighbors_list, test_instance):
 def Voronoi_Partition():
     return 0
 
-
+if __name__ == '__main__':
+    main()
 
 
 
