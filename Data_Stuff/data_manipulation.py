@@ -136,7 +136,7 @@ def temporal_test_validation_split():
 
 #for getting caught up on the concepts of what PCA is: https://www.youtube.com/watch?v=FgakZw6K1QQ
 #  
-def principal_component_analysis(dataset_df, n_components):
+def get_principal_component_analysis_eig_vectors(dataset_df, n_components):
     dataset_np = dataset_df.to_numpy() #converts the dataframe into a numpy array
 
     mean_df = np.mean(arr=dataset_np, axis=0) # here we find the mean of each row of the transformed matrix that was orginally dataset_np. The idea behind this is to eventually subtract our mean_df by dataset_df in order to center it to the origin. This can be best thought of as data that is on a number line and almost all of the data is near x = -53. In order to perform PCA we need to have the data centered at the origin. 
@@ -154,7 +154,16 @@ def principal_component_analysis(dataset_df, n_components):
 
     eigenvector_subset = sorted_eigen_vectors[:,0:n_components] # returns a n_component dimensional matrix
 
-    reduced_matrix = np.dot(eigenvector_subset.transpose(),centered_matrix.transpose()).transpose()
+    return eigenvector_subset
+
+def apply_principal_component_analysis(dataset_df, eigen_vectors):
+    dataset_np = dataset_df.to_numpy() #converts the dataframe into a numpy array
+
+    mean_df = np.mean(arr=dataset_np, axis=0) # here we find the mean of each row of the transformed matrix that was orginally dataset_np. The idea behind this is to eventually subtract our mean_df by dataset_df in order to center it to the origin. This can be best thought of as data that is on a number line and almost all of the data is near x = -53. In order to perform PCA we need to have the data centered at the origin. 
+    
+    centered_matrix = dataset_np - mean_df #centering of the data about the origin. 
+
+    reduced_matrix = np.dot(eigen_vectors.transpose(),centered_matrix.transpose()).transpose()
 
     return reduced_matrix
 

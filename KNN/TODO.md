@@ -10,3 +10,4 @@
 - [ ] (optional) randomly drop features so that there are two left so that KNN can be visualized as a 2 dimensional graph
 - [ ] visualize training points and the test instance 
 - [ ] visualize grouping of kNN 
+- [ ] visualize accuracy 
