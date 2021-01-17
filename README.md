@@ -1,4 +1,5 @@
 # Self Taught Machine Learning
+[![HitCount](http://hits.dwyl.com/BeeGassy/Self_Taught_Machine_Learning.svg)](http://hits.dwyl.com/BeeGassy/Self_Taught_Machine_Learning)
 [From Knowing Nothing To Being An AI Expert: Roadmap](https://i.am.ai/roadmap)
 
 ## CURRICULUM 1: [Cornell's](https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS)
