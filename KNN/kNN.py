@@ -6,12 +6,9 @@ import torch
 import sys
 import os 
 import math
-sys.path.append('../')
-from ..Data_Stuff.data_manipulation import do_data_stuff 
 
-def main():
-    datasets = do_data_stuff(sys.argv)
 
+def do_kNN(datasets):
     train_set = datasets[0]
     test_set = datasets[1]
     validation_set = None
@@ -24,8 +21,6 @@ def main():
     k_value = int(input("What would you like your k value to be: "))
     neighbors = get_k_nearest_neighbors(distance_list, k_value)
     get_most_freq_class(neighbors)
-
-    return 0
 
 
 #goes through test_set dataframe and picks row at random to behave as the testing row
@@ -145,8 +140,6 @@ def visualize_k_neighest_neighbors(k_value, neighbors_list, test_instance):
 def Voronoi_Partition():
     return 0
 
-if __name__ == '__main__':
-    main()
 
 
 
