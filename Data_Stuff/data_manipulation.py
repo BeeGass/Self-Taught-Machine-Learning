@@ -4,13 +4,11 @@ import torch
 import sys
 import os 
 from urllib.request import urlretrieve
-from ..KNN.kNN import do_kNN
+from kNN import do_kNN
 
 def main():
-    dataset = []
-    dataset = do_data_stuff()
-
-    return dataset
+    dataset_dict = do_data_stuff()
+    pick_ml_algo(dataset_dict)
 
 
 def do_data_stuff():
@@ -40,7 +38,7 @@ def do_data_stuff():
         for a_dataset in split_dict:
             split_dict[a_dataset]["features"] = apply_pca(split_dict[a_dataset]["features"], eig_vecs)
         
-    pick_ml_algo(split_dict)
+    return split_dict
 
 
 
@@ -143,10 +141,7 @@ def feature_label_split(dataset_list):
     the_label_position = int(input("please input the number associated with the column that starts the label columns: "))
     for i, a_dataset in enumerate(dataset_list):
 
-        label_df = a_dataset.iloc[:, the_label_position:] #assigning the columns associated with their labels to a dataframe
-        #label_col = a_dataset.iloc[:, [i for i in range(the_label_position, len(a_dataset.columns))]]
-        #label_col = a_dataset.iloc[:, [the_label_position, -1]] #retrieving only the columns associated with the labels 
-        #print("this is the label_col \n", label_df)
+        label_df = a_dataset.iloc[:, the_label_position:] 
         feature_df = a_dataset.iloc[:, :the_label_position] #drop the columns associated with the labels to leave only the feature columns
 
         if i == 0:
@@ -157,8 +152,6 @@ def feature_label_split(dataset_list):
             dataset_dict["validation"] = {"features": feature_df, "labels": label_df}
         else:
             print("how")
-
-    print(dataset_dict["train"]["features"])
 
     return dataset_dict
 
