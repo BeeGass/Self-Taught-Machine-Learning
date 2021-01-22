@@ -4,6 +4,7 @@ import torch
 import sys
 import os 
 from urllib.request import urlretrieve
+import argparse
 from kNN import do_kNN
 
 def main():
@@ -11,32 +12,35 @@ def main():
     pick_ml_algo(dataset_dict)
 
 
-def do_data_stuff():
+def do_data_stuff(ttv_bool: bool, pca_bool: bool):
     the_dataset = choose_dataset()
 
-    ttv_binary_bool = int(input("0 for train-test split, 1 for train-test-validation split: "))
-    if ttv_binary_bool == 0:
+    #ttv_binary_bool = int(input("0 for train-test split, 1 for train-test-validation split: "))
+
+    if ttv_bool:
         train_perc_input = float(input("Please input a value between 0 and 1 that signifies how large of a training set ratio you would like: "))
         tt_list = random_train_test_split(the_dataset, train_perc_input) #returns train/test list
         split_dict = feature_label_split(tt_list) #just so you keep things straight, this is a 2 dimensional list. Its a list containing the 2 datasets (train and test) where each "dataset" list holds the dataframes to both the feature vector and the label vector
 
     
-    elif ttv_binary_bool == 1:
+    elif ttv_bool == False:
         train_perc_input = float(input("Please input a value between 0 and 1 that signifies how large of a training set/validation set/testing set ratio you would like: "))
         ttv_list = random_train_test_validation_split(the_dataset, train_perc_input) #returns train/test/validation list
         split_dict = feature_label_split(ttv_list) #just so you keep things straight, this is a 2 dimensional list. Its a list containing the 3 datasets (train, test and validation) where each "dataset" list holds the dataframes to both the feature vector and the label vector
     
-    else: 
-        print("you did not input a correct number. You will be prompted to start the process over now")
-        do_data_stuff()
 
-    pca_bool = int(input("Would you like to perform PCA on this data?\n1 for Yes, 0 for No: "))
-    if pca_bool == 1:
+    #pca_bool = int(input("Would you like to perform PCA on this data?\n1 for Yes, 0 for No: "))
+    if pca_bool:
         n_components = int(input("What dimensionality would you like your data to be? Please give the number of dimensions: "))
         eig_vecs = get_eigen_vectors(split_dict["train"]["features"], n_components)
 
         for a_dataset in split_dict:
             split_dict[a_dataset]["features"] = apply_pca(split_dict[a_dataset]["features"], eig_vecs)
+
+    print("This is the training/feature set", split_dict["train"]["features"])
+    print("This is the training/label set", split_dict["train"]["labels"])
+    print("This is the testing/feature set", split_dict["test"]["features"])
+    print("This is the testing/label set", split_dict["test"]["labels"])
         
     return split_dict
 
@@ -253,8 +257,7 @@ def apply_pca(dataset_df, eigen_vectors):
 
     reduced_matrix = np.dot(eigen_vectors.transpose(),centered_matrix.transpose()).transpose()
 
-    return reduced_matrix
-
+    return pd.DataFrame(reduced_matrix)
 
 
 #adding noise to your validation, test or even training datasets maybe needed at times for testing models. This is what that is for 

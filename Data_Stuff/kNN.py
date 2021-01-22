@@ -27,15 +27,16 @@ def do_kNN(datasets):
 #------INPUTS-------
 #input_test_set: the testing set data frame
 def get_testing_instance(input_test_set):
-    np_arr = input_test_set["features"]
+    df = input_test_set["features"]
 
-    #the_row = df.sample(n=1) #take only one row to test
-    the_row = np.random.choice(np_arr)
+    the_random_row = df.sample(n=1) #take only one row to test
+    #the_row = np.random.randint()
     #the_row = np_arr.iloc[]
-    print("the testing row", the_row) 
-    #TODO GET THE RANDOM SAMPLING DONE!
+    #random_indices = np.random.choice((np.shape(np_arr)[1]), size=1, replace=False)
+    #the_random_row = np_arr[random_indices, :]
+    print("the testing row", the_random_row) 
 
-    return the_row
+    return the_random_row
 
 
 
@@ -96,6 +97,7 @@ def max_distance(dataset_df, the_testing_row):
 #p_val: the p_val determines if you are doing manhattan, euclidean or max distance
 def minkowski_distance(row1, row2, p_val):
     distance = 0.0
+    print(row2)
 
     for i in range(len(row1)): #we want everything but the label associated with vector
         print("row1: ", row1[i])
