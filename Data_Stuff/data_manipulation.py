@@ -8,39 +8,56 @@ import argparse
 from kNN import do_kNN
 
 def main():
+    # Create the parser
+    my_parser = argparse.ArgumentParser(prog='lml',
+                                        usage='%(prog)s [options] path',
+                                        description='Here you will be able to run and visualize different statistical algorithms.',
+                                        epilog='The hope behind this program was to make an incredibly explicit program for me to reference in the future with tons of inline comments to help me follow along as well as some other stuff to make this a potentially viable piece of software to use if I ever want to test some stuff out.',
+                                        prefix_chars='-'
+                                        )
+    # Add the arguments
+    my_parser.add_argument('--input', action='store', type=int, required=True)
+    my_parser.add_argument('--id', action='store', type=int)
+    my_parser.add_argument('Path', metavar='path', type=str, help='the path to list')
+
+    # Execute the parse_args() method
+    args = my_parser.parse_args()
+
+    input_path = args.Path
+
+    if not os.path.isdir(input_path):
+        print('The path specified does not exist')
+        sys.exit()
+
+    print('\n'.join(os.listdir(input_path)))
+
     dataset_dict = do_data_stuff()
     pick_ml_algo(dataset_dict)
 
-
-def do_data_stuff(ttv_bool: bool, pca_bool: bool):
+def do_data_stuff(ttv_bool = True: bool, pca_bool = False: bool, train_perc_input = 0.8: float, n_components: int):
     the_dataset = choose_dataset()
 
     #ttv_binary_bool = int(input("0 for train-test split, 1 for train-test-validation split: "))
 
     if ttv_bool:
-        train_perc_input = float(input("Please input a value between 0 and 1 that signifies how large of a training set ratio you would like: "))
+        #train_perc_input = float(input("Please input a value between 0 and 1 that signifies how large of a training set ratio you would like: "))
         tt_list = random_train_test_split(the_dataset, train_perc_input) #returns train/test list
         split_dict = feature_label_split(tt_list) #just so you keep things straight, this is a 2 dimensional list. Its a list containing the 2 datasets (train and test) where each "dataset" list holds the dataframes to both the feature vector and the label vector
 
     
     elif ttv_bool == False:
-        train_perc_input = float(input("Please input a value between 0 and 1 that signifies how large of a training set/validation set/testing set ratio you would like: "))
+        #train_perc_input = float(input("Please input a value between 0 and 1 that signifies how large of a training set/validation set/testing set ratio you would like: "))
         ttv_list = random_train_test_validation_split(the_dataset, train_perc_input) #returns train/test/validation list
         split_dict = feature_label_split(ttv_list) #just so you keep things straight, this is a 2 dimensional list. Its a list containing the 3 datasets (train, test and validation) where each "dataset" list holds the dataframes to both the feature vector and the label vector
     
 
     #pca_bool = int(input("Would you like to perform PCA on this data?\n1 for Yes, 0 for No: "))
     if pca_bool:
-        n_components = int(input("What dimensionality would you like your data to be? Please give the number of dimensions: "))
+        #n_components = int(input("What dimensionality would you like your data to be? Please give the number of dimensions: "))
         eig_vecs = get_eigen_vectors(split_dict["train"]["features"], n_components)
 
         for a_dataset in split_dict:
             split_dict[a_dataset]["features"] = apply_pca(split_dict[a_dataset]["features"], eig_vecs)
-
-    print("This is the training/feature set", split_dict["train"]["features"])
-    print("This is the training/label set", split_dict["train"]["labels"])
-    print("This is the testing/feature set", split_dict["test"]["features"])
-    print("This is the testing/label set", split_dict["test"]["labels"])
         
     return split_dict
 
