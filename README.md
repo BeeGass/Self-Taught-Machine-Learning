@@ -170,7 +170,7 @@ For answers for "Machine Learning: A Probabilistic Perspective" refer to:
 * Where is your section on Deep Learning?
   * [Here](https://github.com/BeeGassy/CS-541-Deep_Learning)
 * There is a lot of math here, how do I get into machine learning without a lot of math?
-  * Unfornutely, there really is no way to truly learn machine learning without the math. You may be looking for an applied way to learn machine learning which requires less math but the intent of this repository is to teach the theory from the ground up. 
+  * Unfortunately, there really is no way to truly learn machine learning without the math. You may be looking for an applied way to learn machine learning which requires less math but the intent of this repository is to teach the theory from the ground up. 
 * I need a service that can help me find cheap hotels.
   * Not a question but I believe you are looking for [trivago](https://www.trivago.com/)
 
