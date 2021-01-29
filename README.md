@@ -166,6 +166,14 @@ For answers for "Machine Learning: A Probabilistic Perspective" refer to:
   * [Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/)
   * [Matrix Methods in Data Analysis, Signal Processing, and Machine Learning](https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/)
 
+## Fequently Asked Questions
+* Where is your section on Deep Learning?
+  * [Here](https://github.com/BeeGassy/CS-541-Deep_Learning)
+* There is a lot of math here, how do I get into machine learning without a lot of math?
+  * Unfornutely, there really is no way to truly learn machine learning without the math. You may be looking for an applied way to learn machine learning which requires less math but the intent of this repository is to teach the theory from the ground up. 
+* I need a service that can help me find cheap hotels.
+  * Not a question but I believe you are looking for [trivago](https://www.trivago.com/)
+
 ## Music I Listened To During This Journey
 * Lofi-Kinda
   * [OP-1 05-28-17 (I Need U)](https://www.youtube.com/watch?v=7z4hoazra_g)
