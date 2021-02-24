@@ -8,7 +8,7 @@ import os
 import math
 
 
-def do_kNN(datasets):
+def do_kNN(datasets, k_value:int):
     train_set = datasets["train"]
     test_set = datasets["test"]
     validation_set = None
@@ -18,7 +18,6 @@ def do_kNN(datasets):
 
     test_instance = get_testing_instance(test_set)
     distance_list = distance_prediction(train_set, test_instance)
-    k_value = int(input("What would you like your k value to be: "))
     neighbors = get_k_nearest_neighbors(distance_list, k_value)
     get_most_freq_class(neighbors)
 

@@ -5,53 +5,26 @@ import sys
 import os 
 from urllib.request import urlretrieve
 import argparse
+import json
 from kNN import do_kNN
 
 def main():
-    # Create the parser
-    my_parser = argparse.ArgumentParser(prog='lml',
-                                        usage='%(prog)s [options] path',
-                                        description='Here you will be able to run and visualize different statistical algorithms.',
-                                        epilog='The hope behind this program was to make an incredibly explicit program for me to reference in the future with tons of inline comments to help me follow along as well as some other stuff to make this a potentially viable piece of software to use if I ever want to test some stuff out.',
-                                        prefix_chars='-'
-                                        )
-    # Add the arguments
-    my_parser.add_argument('--input', action='store', type=int, required=True)
-    my_parser.add_argument('--id', action='store', type=int)
-    my_parser.add_argument('Path', metavar='path', type=str, help='the path to list')
+    dataset_arguments = dataset_parser()
+    dataset_dict = do_data_stuff(dataset_arguments)
+    pick_ml_algo(dataset_dict, dataset_arguments)
 
-    # Execute the parse_args() method
-    args = my_parser.parse_args()
-
-    input_path = args.Path
-
-    if not os.path.isdir(input_path):
-        print('The path specified does not exist')
-        sys.exit()
-
-    print('\n'.join(os.listdir(input_path)))
-
-    dataset_dict = do_data_stuff()
-    pick_ml_algo(dataset_dict)
-
-def do_data_stuff(ttv_bool = True: bool, pca_bool = False: bool, train_perc_input = 0.8: float, n_components: int):
-    the_dataset = choose_dataset()
-
-    #ttv_binary_bool = int(input("0 for train-test split, 1 for train-test-validation split: "))
+def do_data_stuff(ttv_bool: bool = True, train_perc_input: float = 0.8, pca_bool: bool = False, n_components: int = 0, the_label_position:int, dataset_arguments):
+    the_dataset = choose_dataset(dataset_arguments)
 
     if ttv_bool:
-        #train_perc_input = float(input("Please input a value between 0 and 1 that signifies how large of a training set ratio you would like: "))
         tt_list = random_train_test_split(the_dataset, train_perc_input) #returns train/test list
-        split_dict = feature_label_split(tt_list) #just so you keep things straight, this is a 2 dimensional list. Its a list containing the 2 datasets (train and test) where each "dataset" list holds the dataframes to both the feature vector and the label vector
+        split_dict = feature_label_split(tt_list, the_label_position) #just so you keep things straight, this is a 2 dimensional list. Its a list containing the 2 datasets (train and test) where each "dataset" list holds the dataframes to both the feature vector and the label vector
 
     
     elif ttv_bool == False:
-        #train_perc_input = float(input("Please input a value between 0 and 1 that signifies how large of a training set/validation set/testing set ratio you would like: "))
         ttv_list = random_train_test_validation_split(the_dataset, train_perc_input) #returns train/test/validation list
-        split_dict = feature_label_split(ttv_list) #just so you keep things straight, this is a 2 dimensional list. Its a list containing the 3 datasets (train, test and validation) where each "dataset" list holds the dataframes to both the feature vector and the label vector
+        split_dict = feature_label_split(ttv_list,the_label_position) #just so you keep things straight, this is a 2 dimensional list. Its a list containing the 3 datasets (train, test and validation) where each "dataset" list holds the dataframes to both the feature vector and the label vector
     
-
-    #pca_bool = int(input("Would you like to perform PCA on this data?\n1 for Yes, 0 for No: "))
     if pca_bool:
         #n_components = int(input("What dimensionality would you like your data to be? Please give the number of dimensions: "))
         eig_vecs = get_eigen_vectors(split_dict["train"]["features"], n_components)
@@ -62,50 +35,148 @@ def do_data_stuff(ttv_bool = True: bool, pca_bool = False: bool, train_perc_inpu
     return split_dict
 
 
+def dataset_parser():
+    # Create the parser
+    my_parser = argparse.ArgumentParser(prog='lml',
+                                        usage='%(prog)s [options] path',
+                                        description='Here you will be able to run and visualize different statistical algorithms.',
+                                        epilog='The hope behind this program was to make an incredibly explicit program for me to reference in the future with tons of inline comments to help me follow along as well as some other stuff to make this a potentially viable piece of software to use if I ever want to test some stuff out.'
+                                        )
+
+    # Add the arguments
+    my_parser.add_argument('--ds',
+                            '--dataset_switch',
+                            action='store', 
+                            type=int, 
+                            required=True,
+                            default='0', 
+                            dest='Dataset_Option',
+                            help='In order to choose which type of dataset you would like to use. 0: iris dataset \n1: Online URL dataset \n2: Your own uploaded dataset'
+                            )
+
+    my_parser.add_argument('--d',
+                            '--dataset',
+                            action='store', 
+                            type=str, 
+                            required=True,
+                            default='iris', 
+                            dest='Inputted_Dataset',
+                            help='Here is where you will input the dataset of your choosing. To put in a spreadsheet of your own download input the directory path where the \".csv\" is.\nAdditionally if you wish to provide a dataset that is available online then input that url which must end as \".data\".\n\"iris\", is the default dataset that is applied'
+                            )
+
+    my_parser.add_argument('--de',
+                            '--delim',
+                            action='store', 
+                            type=str, 
+                            required=True,
+                            default=',', 
+                            dest='The_Deliminator_In_Use',
+                            help='the character for the deliminator used to parse your dataset. Default is a comma'
+                            )
+    
+    my_parser.add_argument('--ttv',
+                            '--ttv_bool',
+                            action='store', 
+                            type=bool,
+                            choices=['True', 'False'],
+                            default='True', 
+                            required=True,
+                            dest='Train_Test_Validation_Boolean_Value',
+                            help='True for train-test split, False for train-test-validation split. The default is True'
+                            )
+
+    my_parser.add_argument('--tpi',
+                            '--train_perc_input', 
+                            action='store', 
+                            type=float,
+                            choices=range(0,1),
+                            default='0.8',
+                            required=True,
+                            dest='Train_Test_Validation_Percentage_Value',
+                            help='Takes in a float value between 0 and 1 that signifies how large of a training set ratio you would like. If train/test/validation is selected then the remainder is split in half.\ne.g. train-set size = 0.6, test-set size = 0.2, validation-set = 0.2'
+                            )
+
+    my_parser.add_argument('-pca',
+                            '--pca_bool',
+                            action='store', 
+                            type=bool,
+                            choices=['True', 'False'],
+                            default='False',
+                            dest='Principal_Component_Analysis_Boolean_Value',
+                            help='True for PCA to be applied to the dataset, False otherwise. The default is False'
+                            )
+
+    my_parser.add_argument('-n',
+                            '--n_components',
+                            action='store', 
+                            type=int,
+                            choices=range(1,100),
+                            dest='n_components_value',
+                            help='n_components is the dimensionality you wish to have your dataset be after PCA is applied. Values can be between 1 and 100 dimensions. Default value is 0'
+                            )
+
+    my_parser.add_argument('--a',
+                            '--algo_option',
+                            action='store', 
+                            type=int,
+                            choices=range(0,9),
+                            default='0',
+                            dest='The_Algorithm_You_Chose',
+                            help='A value between 0 and 9 that determines the algorithm you wish to use.\n0: KNN \n1: Neural Network \n2: Regression \n3: SVM \n4: Bagging \n5: Boosting \n6: Bayes \n7: QDA \n8: LDA \n9: Decision Trees'
+                            )
+
+    my_parser.add_argument('--lb',
+                            '--label_position',
+                            action='store', 
+                            type=int,
+                            choices=range(0,100000),
+                            default='-1',
+                            required=True,
+                            dest='Label_Column_Position',
+                            help='Number associated with the column that starts the label columns'
+                            )
+
+    # Execute the parse_args() method
+    args = my_parser.parse_args()
+
+    if args.lb <= -1 or args.lb > 100000:
+        my_parser.error("An Incorrect -lb/--label_postion was given. It must be between 0 and 10,0000")
+        sys.exit()
+
+    if args.pca is True:
+        if args.n <= 0:
+            my_parser.error("When --pca is True, -n/-n_components must be of value 1 or greater.")
+            sys.exit()
+
+    return args
+
+
 
 #Function that allows you to pick which algorithm you wish to use. 
 #------INPUTS-------
 #dataset_list: the list that contains that train, test and potential validation set that will be used by these algorithms 
-def pick_ml_algo(dataset_dict):
-    print("The algorithms you can pick from:")
-    print("- 0: KNN(available)")
-    print("- 1: Neural Network(not available)")
-    print("- 2: Regression(not available)")
-    print("- 3: SVM(not available)")
-    print("- 4: Bagging(not available)")
-    print("- 5: Boosting(not available)")
-    print("- 6: Bayes(not available)")
-    print("- 7: QDA(not available)")
-    print("- 8: LDA(not available)")
-    print("- 9: Decision Tree(not available)")
-
-    algo_number = int(input("pick the number associated with the algorithm you wish to use: "))
+def pick_ml_algo(dataset_dict, dataset_arguments):
 
     switcher = {
-        0: do_kNN(dataset_dict),
-        1: do_NN(dataset_dict),
-        2: do_regression(dataset_dict),
-        3: do_SVM(dataset_dict),
-        4: do_bagging(dataset_dict),
-        5: do_boosting(dataset_dict),
-        6: do_bayes(dataset_dict),
-        7: do_qda(dataset_dict),
-        8: do_lda(dataset_dict),
-        9: do_decision_tree(dataset_dict)
+        0: do_kNN(dataset_dict, dataset_arguments),
+        1: do_NN(dataset_dict, dataset_arguments),
+        2: do_regression(dataset_dict, dataset_arguments),
+        3: do_SVM(dataset_dict, dataset_arguments),
+        4: do_bagging(dataset_dict, dataset_arguments),
+        5: do_boosting(dataset_dict, dataset_arguments),
+        6: do_bayes(dataset_dict, dataset_arguments),
+        7: do_qda(dataset_dict, dataset_arguments),
+        8: do_lda(dataset_dict, dataset_arguments),
+        9: do_decision_tree(dataset_dict, dataset_arguments)
     }
 
-    return switcher.get(algo_number, "invalid algorithm number")
+    return switcher.get(dataset_arguments, "invalid algorithm number")
 
 
 
-def choose_dataset():
-    print("Please input the name of the default dataset which is \"iris\".")
-    print("If you have an outside link to a dataset you wish to use please input \"Other\"")
-    print("If you wish to upload your own .csv then you will be prompted to do if you type \"Upload\"")
-    input_var = str(input("Please provide your preferred dataset now: "))
+def choose_dataset(input_var:str, delim:str, input_option:str):
     dataset = None 
 
-    delim = str(input("Please put in the character for the deliminator used to parse your dataset. Please make sure to not put a space afterward: "))
     if input_var == "iris": #iris datset
         iris = 'http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
         urlretrieve(iris)
@@ -113,15 +184,14 @@ def choose_dataset():
         dataset = df
 
     elif input_var == "Other": #any other dataset
-        link = str(input("Please provide the link to the dataset you wish to use. Please make sure the link ends in \".data\""))
-        urlretrieve(link)
-        df = pd.read_csv(link, sep=delim, header=None)
+        urlretrieve(input_option)
+        df = pd.read_csv(input_option, sep=delim, header=None)
         dataset = df
 
     elif input_var == "Upload":
         dirname = os.path.dirname(__file__)
         print("please make sure that your csv file has the labels at the tail end of columns listed. The program will not work if the labels are placed elsewhere")
-        filename = os.path.join(dirname, input("Enter file path to .csv with formatting like this: ./KNN/enterYourCSVnameHERE: "))
+        filename = os.path.join(dirname, input_option)
         dataset = workable_csv(filename)
     
     else:
@@ -156,10 +226,9 @@ def format_dataframe(dataset_df, label_str):
 
 
 #feature_label_split() is so we can isolate our labels from our features so we can perform operations on said features 
-def feature_label_split(dataset_list):
+def feature_label_split(dataset_list, the_label_position:int):
     dataset_dict = {}
 
-    the_label_position = int(input("please input the number associated with the column that starts the label columns: "))
     for i, a_dataset in enumerate(dataset_list):
 
         label_df = a_dataset.iloc[:, the_label_position:] 
