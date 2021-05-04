@@ -1,0 +1,1 @@
+To install cvxopt, you can run "pip install cvxopt" (assuming that pip is already installed as a Python package manager on your computer). Alternatively, you can just run the code through Google Colab.
