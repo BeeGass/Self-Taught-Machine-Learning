@@ -1,5 +1,4 @@
 # Self Taught Machine Learning
-[![HitCount](http://hits.dwyl.com/BeeGassy/Self_Taught_Machine_Learning.svg)](http://hits.dwyl.com/BeeGassy/Self_Taught_Machine_Learning)
 
 [From Knowing Nothing To Being An AI Expert: Roadmap](https://i.am.ai/roadmap)
 
